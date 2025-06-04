@@ -1,2 +1,0 @@
-# LaCajitaTech
-Front page
