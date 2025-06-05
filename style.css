@@ -1,19 +1,27 @@
-.top {
-    background-color: #000; /* fondo negro */
-    color: #fff; /* texto blanco */
-    height: 48px; /* altura fija */
-    width: 100vw; /* ancho 100% de la ventana */
-    min-width: 100%; /* asegura el 100% */
-    padding: 0 20px; /* ajusta el padding para mantener la altura */
-    display: flex;
-    justify-content: space-between; /* espacio entre elementos */
-    align-items: center;
-    font-size: 14px;
-    font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif; /* fuente amigable */
-    font-weight: 700; /* más gordita */
+/* Reset y box-sizing global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.cajita{
+/* Barra superior */
+.top {
+    background-color: #000;
+    color: #fff;
+    height: 48px;
+    width: 100vw;
+    min-width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.cajita {
     fill: #fff;
     width: 30px;
     height: 30px;
@@ -37,8 +45,7 @@
     height: 70px;
     padding: 0 25px;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* sombra sutil */
-
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .header > div:first-child {
@@ -66,7 +73,7 @@
 .carrito {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Cambia a flex-start para pegarlo a la izquierda del contenedor */
+    justify-content: flex-start;
     min-width: 50px;
 }
 
@@ -74,8 +81,8 @@
     height: 40px;
     width: 40px;
     object-fit: contain;
-    margin-left: 0; /* Asegura que no tenga margen extra a la izquierda */
-    margin-right: 0; /* Asegura que no tenga margen extra a la derecha */
+    margin-left: 0;
+    margin-right: 0;
     display: block;
 }
 
@@ -90,7 +97,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 }
 
 .slide {
@@ -183,37 +189,61 @@ input[name="slider"] {
 /* --- RESPONSIVE PARA PC --- */
 @media (min-width: 601px) {
     .top {
-        background-color: #000; /* fondo negro */
-        color: #fff; /* texto blanco */
-        height: 48px; /* altura fija */
-        width: 100vw; /* ancho 100% de la ventana */
-        min-width: 100%; /* asegura el 100% */
-        padding: 0 20px; /* ajusta el padding para mantener la altura */
+        background-color: #000;
+        color: #fff;
+        height: 48px;
+        width: 100vw;
+        min-width: 100%;
+        padding: 0 20px;
         display: flex;
-        justify-content: space-between; /* espacio entre elementos */
+        justify-content: space-between;
         align-items: center;
         font-size: 14px;
     }
     .slider {
-        max-width: 600px;
-        height: 320px;
+        display: flex;
+        position: static;
+        max-width: 1600px;
+        height: 460px; /* Fondo blanco más alto */
+        margin: 40px auto;
+        overflow: visible;
+        justify-content: center;
+        align-items: center;
     }
     .slide {
-        height: 320px;
+        position: static;
+        opacity: 1 !important;
+        width: 33.33%;
+        min-width: 0;
+        height: 460px;
+        margin: 0 1%;
+        transition: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        border-radius: 24px;
     }
     .slide img {
-        border-radius: 12px;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        object-fit: contain;
+        background: #fff;
+        display: block;
+        padding: 24px;
+        box-sizing: border-box;
+        margin: 0;
     }
-    .arrow {
-        font-size: 2rem;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
+    .arrow,
+    .slider-nav {
+        display: none !important;
     }
-    .arrow-left { left: 16px; }
-    .arrow-right { right: 16px; }
+    input[name="slider"] {
+        display: none !important;
+    }
 }
-
 
 
 

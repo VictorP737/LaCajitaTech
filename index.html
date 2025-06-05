@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <!-- Definición de metadatos del documento -->
-        <meta charset="UTF-8"> <!-- Codificación de caracteres -->
-        
-        <!-- Conexiones para cargar fuentes de Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="style.css"> <!-- Estilos principales -->
-        <link rel="stylesheet" href="reset.css"> <!-- Reset de estilos por defecto -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap"> <!-- Estilo de fuente personalizada -->
-        
-        <!-- Metadatos de la página -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividad -->
-        <meta name="keywords" content="..."> <!-- Palabras clave para SEO -->
-        <meta name="description" content=""> <!-- Descripción para SEO -->
-        <meta name="author" content=""> <!-- Autor de la página -->
-        <meta name="robots" content="index"> <!-- Instrucciones para los robots de búsqueda -->
-        
-        <title>LaCajitaTech</title> <!-- Título de la página -->
-    </head>
-
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="tecnología, tienda, gadgets, electrónica, compras">
+    <meta name="description" content="LaCajitaTech - Tu tienda de tecnología y gadgets.">
+    <meta name="author" content="Tu Nombre o Empresa">
+    <meta name="robots" content="index">
+    <title>LaCajitaTech</title>
+    <link rel="icon" type="image/png" href="images/logo-redondeado.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap">
+</head>
 <body>
 
 <div class="top">
@@ -29,61 +22,53 @@
         <svg class="cajita" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
             <g fill="#ffffff"><g transform="scale(2,2)"><path d="M63,14.2l-48,17c-1.2,0.4 -2,1.6 -2,2.8v60c0,1.3 0.8,2.4 2,2.8l48,17c0.3,0.1 0.7,0.2 1,0.2c0.2,0 0.3,0 0.5,0h0.1c0.1,0 0.2,-0.1 0.3,-0.1v0l48,-17c1.2,-0.4 2,-1.6 2,-2.8v-60.1v-0.1c0,-0.1 0,-0.3 0,-0.4v-0.1c-0.2,-1 -0.9,-1.9 -1.9,-2.2l-24,-8.5h-0.1c-0.6,-0.2 -1.4,-0.3 -2.1,0l-46.8,16.5c-1.2,0.4 -2,1.6 -2,2.8v11c0,1.7 1.3,3 3,3c1.7,0 3,-1.3 3,-3v-8.9l43.8,-15.5l15.2,5.4l-40,14.2c-1.2,0.4 -2,1.5 -2,2.8c0,0 0,0 0,0.1v55.8l-42,-15v-55.8l46,-16.3c1.6,-0.6 2.4,-2.3 1.8,-3.8c-0.5,-1.6 -2.2,-2.4 -3.8,-1.8zM67,53.1l42,-14.9v53.6l-42,14.9z"></path></g></g>
         </svg>
-        Bienvenidos
+        <span>Bienvenidos</span>
     </div>
 </div>
 
-<!-- Header de la página (logo y menú) -->
 <header class="header">
     <div class="logo-cajita">
         <img src="images/Logo.png" alt="Logo de LaCajitaTech">
     </div>
     <h1>LaCajitaTech</h1>
     <div class="carrito">
-        <img src="https://img.icons8.com/ios-glyphs/60/shopping-cart--v1.png" alt="shopping-cart--v1"/>    </div>
+        <img src="https://img.icons8.com/ios-glyphs/60/shopping-cart--v1.png" alt="Carrito de compras"/>
+    </div>
 </header>
 
-<!-- Menú de navegación -->
-    <main class="main">
-        
-<!-- Slider con flechas (solo CSS) -->
-<input type="radio" name="slider" id="slide1" checked>
-<input type="radio" name="slider" id="slide2">
-<input type="radio" name="slider" id="slide3">
+<main class="main">
 
-<div class="slider">
-    <div class="slide slide1">
-        <label class="arrow arrow-left" for="slide3">&#10094;</label>
-        <img src="images/1.png" alt="Imagen 1 del slider">
-        <label class="arrow arrow-right" for="slide2">&#10095;</label>
-    </div>
-    <div class="slide slide2">
-        <label class="arrow arrow-left" for="slide1">&#10094;</label>
-        <img src="images/2.png" alt="Imagen 2 del slider">
-        <label class="arrow arrow-right" for="slide3">&#10095;</label>
-    </div>
-    <div class="slide slide3">
-        <label class="arrow arrow-left" for="slide2">&#10094;</label>
-        <img src="images/3.png" alt="Imagen 3 del slider">
-        <label class="arrow arrow-right" for="slide1">&#10095;</label>
-    </div>
-</div>
-<div class="slider-nav">
-    <label for="slide1"></label>
-    <label for="slide2"></label>
-    <label for="slide3"></label>
-</div>
+    <!-- Slider con flechas (solo CSS) -->
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
 
-    <div class="container">
+    <div class="slider">
+        <div class="slide slide1">
+            <label class="arrow arrow-left" for="slide3" aria-label="Anterior">&#10094;</label>
+            <img src="images/1.png" alt="Imagen 1 del slider">
+            <label class="arrow arrow-right" for="slide2" aria-label="Siguiente">&#10095;</label>
+        </div>
+        <div class="slide slide2">
+            <label class="arrow arrow-left" for="slide1" aria-label="Anterior">&#10094;</label>
+            <img src="images/2.png" alt="Imagen 2 del slider">
+            <label class="arrow arrow-right" for="slide3" aria-label="Siguiente">&#10095;</label>
+        </div>
+        <div class="slide slide3">
+            <label class="arrow arrow-left" for="slide2" aria-label="Anterior">&#10094;</label>
+            <img src="images/3.png" alt="Imagen 3 del slider">
+            <label class="arrow arrow-right" for="slide1" aria-label="Siguiente">&#10095;</label>
+        </div>
+    </div>
+    <div class="slider-nav">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
     </div>
 
 </main>
 
-<!-- Footer de la página -->
 <footer class="footer">
-
+    <!-- Puedes agregar información de contacto, derechos, etc. aquí -->
 </footer>
-
-</body>
-
 </html>
