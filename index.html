@@ -43,24 +43,40 @@
         <img src="https://img.icons8.com/ios-glyphs/60/shopping-cart--v1.png" alt="shopping-cart--v1"/>    </div>
 </header>
 
-<!-- Header de la página (logo y menú) -->
-
+<!-- Menú de navegación -->
     <main class="main">
         
-    <div class="slider">
-        <div class="slide">
-            <img src="images/slider1.jpg" alt="Imagen 1 del slider">
-        </div>
-        <div class="slide">
-            <img src="images/slider2.jpg" alt="Imagen 2 del slider">
-        </div>
-        <div class="slide">
-            <img src="images/slider3.jpg" alt="Imagen 3 del slider">
-        </div>
+<!-- Slider con flechas (solo CSS) -->
+<input type="radio" name="slider" id="slide1" checked>
+<input type="radio" name="slider" id="slide2">
+<input type="radio" name="slider" id="slide3">
+
+<div class="slider">
+    <div class="slide slide1">
+        <label class="arrow arrow-left" for="slide3">&#10094;</label>
+        <img src="images/1.png" alt="Imagen 1 del slider">
+        <label class="arrow arrow-right" for="slide2">&#10095;</label>
     </div>
+    <div class="slide slide2">
+        <label class="arrow arrow-left" for="slide1">&#10094;</label>
+        <img src="images/2.png" alt="Imagen 2 del slider">
+        <label class="arrow arrow-right" for="slide3">&#10095;</label>
+    </div>
+    <div class="slide slide3">
+        <label class="arrow arrow-left" for="slide2">&#10094;</label>
+        <img src="images/3.png" alt="Imagen 3 del slider">
+        <label class="arrow arrow-right" for="slide1">&#10095;</label>
+    </div>
+</div>
+<div class="slider-nav">
+    <label for="slide1"></label>
+    <label for="slide2"></label>
+    <label for="slide3"></label>
+</div>
 
     <div class="container">
     </div>
+
 </main>
 
 <!-- Footer de la página -->

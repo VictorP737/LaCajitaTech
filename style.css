@@ -79,9 +79,109 @@
     display: block;
 }
 
+/* --- SLIDER PARA MÓVIL --- */
+.slider {
+    position: relative;
+    width: 95vw;
+    max-width: 95vw;
+    height: 180px;
+    margin: 20px auto 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
 
-@media screen and (min-width: 1000px) {
-  /* Top */
+.slide {
+    width: 100%;
+    height: 180px;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Flechas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    font-size: 1.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    border: none;
+    outline: none;
+}
+
+.arrow-left { left: 8px; }
+.arrow-right { right: 8px; }
+
+.arrow:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+/* Radio buttons ocultos */
+input[name="slider"] {
+    display: none;
+}
+
+/* Mostrar la slide correspondiente */
+#slide1:checked ~ .slider .slide1,
+#slide2:checked ~ .slider .slide2,
+#slide3:checked ~ .slider .slide3 {
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+}
+
+/* Botones de navegación */
+.slider-nav {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.slider-nav label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #bbb;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#slide1:checked ~ .slider-nav label[for="slide1"],
+#slide2:checked ~ .slider-nav label[for="slide2"],
+#slide3:checked ~ .slider-nav label[for="slide3"] {
+    background: #222;
+}
+
+/* --- RESPONSIVE PARA PC --- */
+@media (min-width: 601px) {
     .top {
         background-color: #000; /* fondo negro */
         color: #fff; /* texto blanco */
@@ -94,6 +194,26 @@
         align-items: center;
         font-size: 14px;
     }
+    .slider {
+        max-width: 600px;
+        height: 320px;
+    }
+    .slide {
+        height: 320px;
+    }
+    .slide img {
+        border-radius: 12px;
+    }
+    .arrow {
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .arrow-left { left: 16px; }
+    .arrow-right { right: 16px; }
 }
+
+
 
 
