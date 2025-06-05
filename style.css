@@ -29,9 +29,56 @@
     justify-content: center;
 }
 
-.top a {
-    display: none;
+/* Header principal alineado horizontalmente */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 25px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* sombra sutil */
+
 }
+
+.header > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    height: 48px;
+    width: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.header h1 {
+    flex: 1;
+    text-align: center;
+    font-family: 'Signika', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #222;
+}
+
+.carrito {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Cambia a flex-start para pegarlo a la izquierda del contenedor */
+    min-width: 50px;
+}
+
+.carrito img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    margin-left: 0; /* Asegura que no tenga margen extra a la izquierda */
+    margin-right: 0; /* Asegura que no tenga margen extra a la derecha */
+    display: block;
+}
+
 
 @media screen and (min-width: 1000px) {
   /* Top */
