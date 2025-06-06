@@ -477,15 +477,24 @@ input[name="slider"] {
     }
 
     .accordion-content a {
-        color: #eee;
-        font-size: 0.95rem;
-        padding: 2px 0;
+        color: #ffffff;
         text-decoration: none;
+        font-size: 0.97rem;
+        padding: 6px 10px 6px 10px;
+        border: none;
+        background: none;
+        margin: 0;
+        transition: background 0.2s, color 0.2s, border-radius 0.2s, padding-left 0.2s; /* <-- Agregado */
+        box-shadow: none;
     }
 
     .accordion-content a:hover {
-        color: #fff;
-        text-decoration: underline;
+        color: #000000;
+        border-radius: 10px;
+    }
+
+    .accordion-title:hover{
+        background: #111;
     }
 
     .footer {
