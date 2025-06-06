@@ -420,7 +420,7 @@ input[name="slider"] {
     input[name="slider"] {
         display: none !important;
     }
-    
+
     .filtro {
         gap: 48px;
         padding: 32px 0;
@@ -443,45 +443,74 @@ input[name="slider"] {
     .item h3 {
         font-size: 1.1rem;
     }
-    .footer-box{
+
+    .footer-accordion {
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .accordion-item {
+        width: auto;
+    }
+
+    .accordion-title {
+        all: unset;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #fff;
+        margin-bottom: 12px;
+        cursor: default;
+    }
+
+    .accordion-arrow {
         display: none;
+    }
+
+    .accordion-content {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .accordion-content a {
+        color: #eee;
+        font-size: 0.95rem;
+        padding: 2px 0;
+        text-decoration: none;
+    }
+
+    .accordion-content a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .footer {
+        background: #111;
+        padding: 40px 60px;
+        color: #fff;
+    }
+
+    .footer-copy {
+        color: #ccc;
+        font-size: 0.85rem;
+        margin-top: 20px;
+    }
+
+    .footer-card {
+        display: none; /* Ocultamos la tarjeta si es solo para móvil */
     }
 
     .footer-bottom {
         display: block;
-        background-color: #ff6600; /* Color base */
-        padding: 20px 15px; /* Más padding lateral en móvil */
-        text-align: center;
-    }
-
-    .footer-bottom-content {
-        display: flex;
-        flex-direction: column; /* Elementos apilados en móvil */
-        gap: 15px;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-}
-
-    .footer-links {
-        display: flex;
-        flex-wrap: wrap; /* Enlaces pueden saltar de línea */
-        justify-content: center;
-        gap: 10px 20px; /* 10px vertical, 20px horizontal */
-    }
-
-    .footer-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 13px;
-        white-space: nowrap; /* Evita saltos de línea en texto */
-}
-
-    .copyright {
-        font-size: 12px;
-        order: -1; /* Copyright arriba en móvil */
-        color: #000;
-        font-weight:bold;
+        width: 100%;
+        text-align: left;
+        margin-top: 24px;
+        color: #ccc;
+        font-size: 0.85rem;
     }
 
 }
