@@ -128,8 +128,73 @@
 </div>
 
 </main>
-
 <footer class="footer">
-    <!-- Puedes agregar información de contacto, derechos, etc. aquí -->
+    <div class="footer-ikea">
+        <!-- Logo eliminado -->
+        <div class="footer-accordion">
+            <div class="accordion-item">
+                <button class="accordion-title">
+                    LaCajitaTech
+                    <span class="accordion-arrow"></span>
+                </button>
+                <div class="accordion-content">
+                    <a href="#">Quiénes somos</a>
+                    <a href="#">Experiencia Cajita</a>
+                    <a href="#">Misión y Visión</a>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-title">
+                    Servicios al cliente
+                    <span class="accordion-arrow"></span>
+                </button>
+                <div class="accordion-content">
+                    <a href="#">Contáctenos</a>
+                    <a href="#">Soporte</a>
+                    <a href="#">Cuéntanos tu experiencia</a>
+                    <a href="#">Garantías</a>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-title">
+                    Servicios
+                    <span class="accordion-arrow"></span>
+                </button>
+                <div class="accordion-content">
+                    <a href="#">Mantenimientos</a>
+                    <a href="#">Servicio post venta</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook-new.png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+        <div class="footer-copy">
+            <small>&copy; 2025 LaCajitaTech. Todos los derechos reservados.</small>
+        </div>
+    </div>
 </footer>
+
+<script>
+document.querySelectorAll('.accordion-title').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const isActive = this.classList.contains('active');
+        document.querySelectorAll('.accordion-title').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.accordion-content').forEach(c => {
+            c.style.maxHeight = '0px';
+            c.classList.remove('open');
+        });
+        if (!isActive) {
+            this.classList.add('active');
+            const content = this.nextElementSibling;
+            content.classList.add('open');
+            // Suma el padding vertical (16px arriba + 16px abajo = 32px)
+            const padding = 32;
+            content.style.maxHeight = (content.scrollHeight + padding) + "px";
+        }
+    });
+});
+</script>
 </html>
