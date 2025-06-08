@@ -510,7 +510,7 @@ input[name="slider"] {
     }
 
     .footer-card {
-        display: none; /* Ocultamos la tarjeta si es solo para móvil */
+        display: none;
     }
 
     .footer-bottom {
