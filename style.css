@@ -86,6 +86,127 @@
     display: block;
 }
 
+
+/* Carrito Modal */
+#modal-carrito {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ocultar modal si está en display:none */
+#modal-carrito[style*="display: none"] {
+    display: none !important;
+}
+
+/* Contenido del modal */
+.modal-carrito-contenido {
+    background: #fff;
+    max-width: 400px;
+    width: 90vw;
+    padding: 24px 16px 16px 16px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+}
+
+.modal-carrito-contenido h2 {
+    background: #000000;
+    color: #fff;
+    font-size: 1.18rem;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 8px 0;
+    margin: 5px auto 15px auto;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px rgba(255,102,0,0.10);
+    width: 60%;
+    max-width: 260px;
+    min-width: 140px;
+    display: block;
+}
+
+/* Botón cerrar */
+.cerrar-carrito {
+    position: absolute;
+    top: 8px; right: 12px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Items del carrito */
+#carrito-items > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#carrito-items img {
+    width: 40px; height: 40px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+#carrito-items button {
+    margin-left: 8px;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+/* Total del carrito */
+#carrito-total {
+    margin: 16px 0;
+    font-weight: bold;
+}
+
+/* Botón vaciar carrito */
+.btn-vaciar {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-vaciar:hover {
+    background: #e65c00;
+}
+
+/* Badge del carrito */
+#carrito-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #ff6600;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 15px;
+    padding: 2px 6px;
+}
+
+/* Icono del carrito */
+.carrito {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 50px;
+}
+
 /* --- SLIDER PARA MÓVIL --- */
 .slider {
     position: relative;
@@ -442,6 +563,18 @@ input[name="slider"] {
 
 /* --- RESPONSIVE PARA PC --- */
 @media (min-width: 601px) {
+    .modal-carrito-contenido {
+        max-width: 600px;
+        padding: 32px 24px 24px 24px;
+    }
+    #carrito-items img {
+        width: 48px;
+        height: 48px;
+    }
+    #carrito-badge {
+        font-size: 17px;
+        padding: 3px 8px;
+    }
     .slider {
         display: flex;
         position: static;
@@ -485,24 +618,22 @@ input[name="slider"] {
     input[name="slider"] {
         display: none !important;
     }
-    .filtro {
-        gap: 30px;
-        padding: 10px 0;
-        margin-left: 20px;
-        margin-right: 20px;
-        scrollbar-color: #111 #eee;
-        justify-content: flex-start;
-    }
-    .item {
+    .filtro .item {
+        width: 180px;
         min-width: 180px;
-        max-width: 220px;
-        padding: 24px 12px;
-        border-radius: 20px;
-        border: 2.5px solid #111;
+        max-width: 180px;
+        height: 170px;         /* <-- Alto fijo */
+        min-height: 170px;     /* <-- Alto mínimo igual */
+        max-height: 170px;     /* <-- Alto máximo igual */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centra verticalmente */
     }
     .item img {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
     }
     .item h3 {
         font-size: 1.1rem;
@@ -515,8 +646,8 @@ input[name="slider"] {
         background: #fafafa;
     }
     .producto img {
-        width: 100px;
-        height: 100px;
+        width: 80%;
+        height: auto;
         object-fit: contain;
         margin-bottom: 12px;
     }
