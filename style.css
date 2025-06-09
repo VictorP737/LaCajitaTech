@@ -77,6 +77,16 @@
     min-width: 50px;
 }
 
+.carrito:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.carrito:hover img {
+    filter: brightness(0) saturate(100%) invert(54%) sepia(94%) saturate(753%) hue-rotate(1deg) brightness(103%) contrast(103%);
+    transition: filter 0.3s;
+}
+
 .carrito img {
     height: 40px;
     width: 40px;
@@ -173,17 +183,53 @@
 
 /* Botón vaciar carrito */
 .btn-vaciar {
-    background: #ff6600;
-    color: #fff;
-    border: none;
+    background: transparent;
+    color: #ff6600;
+    border: 1.5px solid #ff6600;
     padding: 6px 10px;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+    transition: all 0.3s;
+    width: auto;
 }
 
 .btn-vaciar:hover {
     background: #ff6600;
+    color: white;
+}
+
+/* boton comprar*/
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+}
+
+.btn-whatsapp img {
+    width: 24px;
+    height: 24px;
 }
 
 /* Badge del carrito */
@@ -433,9 +479,34 @@ input[name="slider"] {
     transition: background 0.2s;
 }
 
+
 .btn-carrito:hover {
-    background: #ff6600;
+    background: #ff8800;
+    scale: 1.1;
 }
+
+.btn-comprar-ahora {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-comprar-ahora:hover {
+    background: #ff8800;
+    scale: 1.1;
+}
+
 
 /* footer */
 .footer-accordion {

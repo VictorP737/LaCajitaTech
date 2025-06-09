@@ -32,3 +32,15 @@ document.querySelectorAll('.filtro .item').forEach(btn => {
         this.classList.add('activo');
     });
 });
+
+//boton comprar ahora cada producto
+// Funcionalidad para botón COMPRAR AHORA
+document.querySelectorAll('.btn-comprar-ahora').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const producto = this.getAttribute('data-producto');
+        const precio = this.getAttribute('data-precio');
+        const mensaje = `¡Hola LaCajitaTech! Quiero comprar: ${producto} - $${precio}`;
+        const numero = '573112168639'; // Cambiar si es necesario
+        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    });
+});

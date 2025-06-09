@@ -38,6 +38,13 @@ document.querySelectorAll('.btn-carrito').forEach((btn) => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
         renderCarrito();
         actualizarIconoCarrito();
+        // Mostrar notificación
+        const noti = document.getElementById('notificacion-carrito');
+        noti.style.display = 'block';
+        setTimeout(() => {
+            noti.style.display = 'none';
+        }, 2100);
+
     });
 });
 
@@ -112,3 +119,26 @@ function actualizarIconoCarrito() {
     badge.style.display = 'inline-block';
 }
 actualizarIconoCarrito();
+
+//funcionalidad comprar
+document.getElementById('comprar-whatsapp').addEventListener('click', function() {
+    const productos = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if (productos.length === 0) {
+        alert('Tu carrito está vacío');
+        return;
+    }
+
+    let mensaje = '¡Hola LaCajitaTech! Quiero comprar los siguientes productos:%0A%0A';
+    let total = 0;
+
+    productos.forEach((producto, index) => {
+        mensaje += `${index + 1}. ${producto.nombre} - $${producto.precio}%0A`;
+        total += producto.precio * producto.cantidad;
+    });
+
+    mensaje += `%0ATotal: $${total.toFixed(2)}%0A%0AMi información:%0ANombre: [COMPLETAR]%0ADirección: [COMPLETAR]%0ATeléfono: [COMPLETAR]`;
+
+    const telefono = '573113903985';
+    window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+});
