@@ -186,6 +186,7 @@ input[name="slider"] {
     background: #222;
 }
 
+/* Filtro de categorías */
 .filtro {
     flex: 1;
     display: flex;
@@ -210,6 +211,12 @@ input[name="slider"] {
     border-radius: 4px;
 }
 
+/* Ocultar categorías específicas */
+.filtro [data-categoria="microfono"] {
+    display: none;
+}
+
+/* Estilo de los elementos del filtro */
 .item {
     background: #fff;
     border-radius: 16px;
@@ -223,6 +230,8 @@ input[name="slider"] {
     flex-direction: column;
     align-items: center;
     border: 2px solid #111;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .item img {
@@ -237,6 +246,76 @@ input[name="slider"] {
     margin: 0;
     color: #222;
 }
+
+.filtro .item:hover {
+    border-color: #ff6600;
+    box-shadow: 0 4px 16px rgba(255,102,0,0.10);
+    background: #fff7f0;
+}
+
+/* productos */
+.productos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px 6px;
+    background: #fafafa;
+}
+
+.producto {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 18px 12px 22px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #eee;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+.producto:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+    border: 2px solid #ff6600;
+}
+
+.producto img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.producto h4 {
+    font-size: 1.08rem;
+    margin: 0 0 8px 0;
+    color: #222;
+    text-align: center;
+}
+
+.precio {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff6600;
+    margin-bottom: 12px;
+}
+
+.btn-carrito {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-carrito:hover {
+    background: #e65c00;
+}
+
 /* footer */
 .footer-accordion {
     width: 100%;
@@ -249,7 +328,6 @@ input[name="slider"] {
 
 .accordion-item {
     width: 100%;
-    /* No border-bottom aquí, solo en el contenido abierto */
 }
 
 .accordion-title {
@@ -270,9 +348,9 @@ input[name="slider"] {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    border-bottom: 2.5px solid #bdbdbd; /* Más grueso y gris más oscuro */
+    border-bottom: 2.5px solid #bdbdbd;
     border-radius: 14px 14px 0 0;
-    box-shadow: 0 2px 8px rgba(180,180,180,0.10); /* Sombra sutil para resaltar */
+    box-shadow: 0 2px 8px rgba(180,180,180,0.10);
 }
 
 .accordion-arrow {
@@ -311,7 +389,7 @@ input[name="slider"] {
 
 .accordion-content.open {
     padding: 16px 0;
-    border-bottom: 1.5px solid #d1d1d1; /* Línea divisoria solo cuando está abierto */
+    border-bottom: 1.5px solid #d1d1d1;
 }
 
 .accordion-content a {
@@ -348,7 +426,6 @@ input[name="slider"] {
     z-index: 2;
 }
 
-/* Opcional: sombra más suave al pasar el mouse */
 .footer-card:hover {
     box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 0 0 4px #fff;
 }
@@ -359,29 +436,17 @@ input[name="slider"] {
     margin-top: 12px;
 }
 
-.footer-bottom{
+.footer-bottom {
     display: none;
 }
 
 /* --- RESPONSIVE PARA PC --- */
 @media (min-width: 601px) {
-    .top {
-        background-color: #000;
-        color: #fff;
-        height: 48px;
-        width: 100vw;
-        min-width: 100%;
-        padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-    }
     .slider {
         display: flex;
         position: static;
         max-width: 1600px;
-        height: 460px; /* Fondo blanco más alto */
+        height: 460px;
         margin: 20px auto;
         overflow: visible;
         justify-content: center;
@@ -402,7 +467,6 @@ input[name="slider"] {
         box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         border-radius: 24px;
     }
-
     .slide img {
         width: 100%;
         height: 100%;
@@ -421,14 +485,13 @@ input[name="slider"] {
     input[name="slider"] {
         display: none !important;
     }
-
     .filtro {
         gap: 30px;
         padding: 10px 0;
         margin-left: 20px;
         margin-right: 20px;
         scrollbar-color: #111 #eee;
-        justify-content: flex-start; /* Mantén flex-start para scroll horizontal */
+        justify-content: flex-start;
     }
     .item {
         min-width: 180px;
@@ -444,7 +507,19 @@ input[name="slider"] {
     .item h3 {
         font-size: 1.1rem;
     }
-
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        padding: 32px 20px;
+        background: #fafafa;
+    }
+    .producto img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 12px;
+    }
     .footer-accordion {
         max-width: 100%;
         flex-direction: row;
@@ -452,11 +527,9 @@ input[name="slider"] {
         align-items: flex-start;
         gap: 40px;
     }
-
     .accordion-item {
         width: auto;
     }
-
     .accordion-title {
         all: unset;
         font-weight: 700;
@@ -465,18 +538,15 @@ input[name="slider"] {
         margin-bottom: 12px;
         cursor: default;
     }
-
     .accordion-arrow {
         display: none;
     }
-
     .accordion-content {
         all: unset;
         display: flex;
         flex-direction: column;
         gap: 8px;
     }
-
     .accordion-content a {
         color: #ffffff;
         text-decoration: none;
@@ -485,35 +555,29 @@ input[name="slider"] {
         border: none;
         background: none;
         margin: 0;
-        transition: background 0.2s, color 0.2s, border-radius 0.2s, padding-left 0.2s; /* <-- Agregado */
+        transition: background 0.2s, color 0.2s, border-radius 0.2s, padding-left 0.2s;
         box-shadow: none;
     }
-
     .accordion-content a:hover {
         color: #000000;
         border-radius: 10px;
     }
-
-    .accordion-title:hover{
+    .accordion-title:hover {
         background: #111;
     }
-
     .footer {
         background: #111;
         padding: 40px 60px;
         color: #fff;
     }
-
     .footer-copy {
         color: #ccc;
         font-size: 0.85rem;
         margin-top: 20px;
     }
-
     .footer-card {
         display: none;
     }
-
     .footer-bottom {
         display: block;
         width: 100%;
@@ -522,5 +586,4 @@ input[name="slider"] {
         color: #ccc;
         font-size: 0.85rem;
     }
-
 }

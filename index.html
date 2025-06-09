@@ -16,170 +16,210 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap">
 </head>
 <body>
-
-<div class="top">
-    <div class="bienvenida-con-logo">
-        <svg class="cajita" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-            <g fill="#ffffff"><g transform="scale(2,2)"><path d="M63,14.2l-48,17c-1.2,0.4 -2,1.6 -2,2.8v60c0,1.3 0.8,2.4 2,2.8l48,17c0.3,0.1 0.7,0.2 1,0.2c0.2,0 0.3,0 0.5,0h0.1c0.1,0 0.2,-0.1 0.3,-0.1v0l48,-17c1.2,-0.4 2,-1.6 2,-2.8v-60.1v-0.1c0,-0.1 0,-0.3 0,-0.4v-0.1c-0.2,-1 -0.9,-1.9 -1.9,-2.2l-24,-8.5h-0.1c-0.6,-0.2 -1.4,-0.3 -2.1,0l-46.8,16.5c-1.2,0.4 -2,1.6 -2,2.8v11c0,1.7 1.3,3 3,3c1.7,0 3,-1.3 3,-3v-8.9l43.8,-15.5l15.2,5.4l-40,14.2c-1.2,0.4 -2,1.5 -2,2.8c0,0 0,0 0,0.1v55.8l-42,-15v-55.8l46,-16.3c1.6,-0.6 2.4,-2.3 1.8,-3.8c-0.5,-1.6 -2.2,-2.4 -3.8,-1.8zM67,53.1l42,-14.9v53.6l-42,14.9z"></path></g></g>
-        </svg>
-        <span>Bienvenidos</span>
-    </div>
-</div>
-
-<header class="header">
-    <div class="logo-cajita">
-        <img src="images/Logo.png" alt="Logo de LaCajitaTech">
-    </div>
-    <h1>LaCajitaTech</h1>
-    <div class="carrito">
-        <img src="https://img.icons8.com/ios-glyphs/60/shopping-cart--v1.png" alt="Carrito de compras"/>
-    </div>
-</header>
-
-<main class="main">
-
-    <!-- Slider con flechas (solo CSS) -->
-    <input type="radio" name="slider" id="slide1" checked>
-    <input type="radio" name="slider" id="slide2">
-    <input type="radio" name="slider" id="slide3">
-
-    <div class="slider">
-        <div class="slide slide1">
-            <label class="arrow arrow-left" for="slide3" aria-label="Anterior">&#10094;</label>
-            <img src="images/1.png" alt="Imagen 1 del slider">
-            <label class="arrow arrow-right" for="slide2" aria-label="Siguiente">&#10095;</label>
-        </div>
-        <div class="slide slide2">
-            <label class="arrow arrow-left" for="slide1" aria-label="Anterior">&#10094;</label>
-            <img src="images/2.png" alt="Imagen 2 del slider">
-            <label class="arrow arrow-right" for="slide3" aria-label="Siguiente">&#10095;</label>
-        </div>
-        <div class="slide slide3">
-            <label class="arrow arrow-left" for="slide2" aria-label="Anterior">&#10094;</label>
-            <img src="images/3.png" alt="Imagen 3 del slider">
-            <label class="arrow arrow-right" for="slide1" aria-label="Siguiente">&#10095;</label>
+    <div class="top">
+        <div class="bienvenida-con-logo">
+            <svg class="cajita" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <g fill="#ffffff">
+                    <g transform="scale(2,2)">
+                        <path d="M63,14.2l-48,17c-1.2,0.4 -2,1.6 -2,2.8v60c0,1.3 0.8,2.4 2,2.8l48,17c0.3,0.1 0.7,0.2 1,0.2c0.2,0 0.3,0 0.5,0h0.1c0.1,0 0.2,-0.1 0.3,-0.1v0l48,-17c1.2,-0.4 2,-1.6 2,-2.8v-60.1v-0.1c0,-0.1 0,-0.3 0,-0.4v-0.1c-0.2,-1 -0.9,-1.9 -1.9,-2.2l-24,-8.5h-0.1c-0.6,-0.2 -1.4,-0.3 -2.1,0l-46.8,16.5c-1.2,0.4 -2,1.6 -2,2.8v11c0,1.7 1.3,3 3,3c1.7,0 3,-1.3 3,-3v-8.9l43.8,-15.5l15.2,5.4l-40,14.2c-1.2,0.4 -2,1.5 -2,2.8c0,0 0,0 0,0.1v55.8l-42,-15v-55.8l46,-16.3c1.6,-0.6 2.4,-2.3 1.8,-3.8c-0.5,-1.6 -2.2,-2.4 -3.8,-1.8zM67,53.1l42,-14.9v53.6l-42,14.9z"></path>
+                    </g>
+                </g>
+            </svg>
+            <span>Bienvenidos</span>
         </div>
     </div>
-    <div class="slider-nav">
-        <label for="slide1"></label>
-        <label for="slide2"></label>
-        <label for="slide3"></label>
-    </div> 
 
-<div class="filtro">
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/carbon-copy/100/headphones--v2.png" alt="headphones--v2"/>
-        <h3>audifonos</h3>
-    </div>
-    
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/parakeet-line/100/mouse.png" alt="mouse"/>    
-        <h3>Mouse o Ratones</h3>
-    </div>
+    <header class="header">
+        <div class="logo-cajita">
+            <img src="images/Logo.png" alt="Logo de LaCajitaTech">
+        </div>
+        <h1>LaCajitaTech</h1>
+        <div class="carrito">
+            <img src="https://img.icons8.com/ios-glyphs/60/shopping-cart--v1.png" alt="Carrito de compras"/>
+        </div>
+    </header>
 
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/wired/100/keyboard.png" alt="keyboard"/>
-        <h3>Teclado</h3>
-    </div>
+    <main class="main">
+        <!-- Slider con flechas (solo CSS) -->
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
 
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/dotty/100/ps-controller.png" alt="ps-controller"/>        
-        <h3>Controles o mandos</h3>
-    </div>
-
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/dotty/100/processor.png" alt="processor"/>
-        <h3>Procesadores</h3>
-    </div>
-
-    <div class="item">
-        <img src="images/tarjeta-grafica.png" alt="Graficas">
-        <h3>Tarjetas Graficas</h3>
-    </div>
-
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/dotty/100/ssd.png" alt="ssd"/>
-        <h3>Almacenamiento</h3>
-    </div>
-
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/dotty/100/monitor.png" alt="monitor"/>
-        <h3>Monitores</h3>
-    </div>
-
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/100/external-ram-computer-xnimrodx-lineal-xnimrodx.png" alt="external-ram-computer-xnimrodx-lineal-xnimrodx"/>
-        <h3>Memoria RAM</h3>
-    </div>
-
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/dotty/100/motherboard.png" alt="motherboard"/>
-        <h3>Placa base</h3>
-    </div>
-
-    <div class="item">
-        <img width="100" height="100" src="https://img.icons8.com/dotty/100/microphone.png" alt="microphone"/>
-        <h3>Microfonos</h3>
-    </div>
-</div>
-
-<div>
-    hola
-</div>
-
-</main>
-<footer class="footer">
-    <div class="footer-box">
-        <!-- Logo eliminado -->
-        <div class="footer-accordion">
-            <div class="accordion-item">
-                <button class="accordion-title">
-                    LaCajitaTech
-                    <span class="accordion-arrow"></span>
-                </button>
-                <div class="accordion-content">
-                    <a href="#">Quiénes somos</a>
-                    <a href="#">Experiencia Cajita</a>
-                    <a href="#">Misión y Visión</a>
-                </div>
+        <div class="slider">
+            <div class="slide slide1">
+                <label class="arrow arrow-left" for="slide3" aria-label="Anterior">&#10094;</label>
+                <img src="images/1.png" alt="Imagen 1 del slider">
+                <label class="arrow arrow-right" for="slide2" aria-label="Siguiente">&#10095;</label>
             </div>
-            <div class="accordion-item">
-                <button class="accordion-title">
-                    Servicios al cliente
-                    <span class="accordion-arrow"></span>
-                </button>
-                <div class="accordion-content">
-                    <a href="#">Contáctenos</a>
-                    <a href="#">Soporte</a>
-                    <a href="#">Cuéntanos tu experiencia</a>
-                    <a href="#">Garantías</a>
-                </div>
+            <div class="slide slide2">
+                <label class="arrow arrow-left" for="slide1" aria-label="Anterior">&#10094;</label>
+                <img src="images/2.png" alt="Imagen 2 del slider">
+                <label class="arrow arrow-right" for="slide3" aria-label="Siguiente">&#10095;</label>
             </div>
-            <div class="accordion-item">
-                <button class="accordion-title">
-                    Servicios
-                    <span class="accordion-arrow"></span>
-                </button>
-                <div class="accordion-content">
-                    <a href="#">Mantenimientos</a>
-                    <a href="#">Servicio post venta</a>
-                </div>
+            <div class="slide slide3">
+                <label class="arrow arrow-left" for="slide2" aria-label="Anterior">&#10094;</label>
+                <img src="images/3.png" alt="Imagen 3 del slider">
+                <label class="arrow arrow-right" for="slide1" aria-label="Siguiente">&#10095;</label>
             </div>
         </div>
-        
+        <div class="slider-nav">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div> 
+
+        <div class="filtro">
+            <button class="item" type="button" data-categoria="todos">
+                <img width="100" height="100" src="https://img.icons8.com/pastel-glyph/100/box--v2.png" alt="Todos los productos"/>
+                <h3>Todos los productos</h3>
+            </button>
+            <button class="item" type="button" data-categoria="audifonos">
+                <img width="100" height="100" src="https://img.icons8.com/carbon-copy/100/headphones--v2.png" alt="Audífonos"/>
+                <h3>Audífonos</h3>
+            </button>
+            <button class="item" type="button" data-categoria="mouse">
+                <img width="100" height="100" src="https://img.icons8.com/parakeet-line/100/mouse.png" alt="Mouse"/>    
+                <h3>Mouse o Ratones</h3>
+            </button>
+            <button class="item" type="button" data-categoria="teclado">
+                <img width="100" height="100" src="https://img.icons8.com/wired/100/keyboard.png" alt="Teclado"/>
+                <h3>Teclado</h3>
+            </button>
+            <button class="item" type="button" data-categoria="controles">
+                <img width="100" height="100" src="https://img.icons8.com/dotty/100/ps-controller.png" alt="Controles o mandos"/>        
+                <h3>Controles o mandos</h3>
+            </button>
+            <button class="item" type="button" data-categoria="procesador">
+                <img width="100" height="100" src="https://img.icons8.com/dotty/100/processor.png" alt="Procesadores"/>
+                <h3>Procesadores</h3>
+            </button>
+            <button class="item" type="button" data-categoria="tarjeta-grafica">
+                <img src="images/tarjeta-grafica.png" alt="Tarjetas Graficas">
+                <h3>Tarjetas Graficas</h3>
+            </button>
+            <button class="item" type="button" data-categoria="almacenamiento">
+                <img width="100" height="100" src="https://img.icons8.com/dotty/100/ssd.png" alt="Almacenamiento"/>
+                <h3>Almacenamiento</h3>
+            </button>
+            <button class="item" type="button" data-categoria="monitor">
+                <img width="100" height="100" src="https://img.icons8.com/dotty/100/monitor.png" alt="Monitores"/>
+                <h3>Monitores</h3>
+            </button>
+            <button class="item" type="button" data-categoria="ram">
+                <img width="100" height="100" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/100/external-ram-computer-xnimrodx-lineal-xnimrodx.png" alt="Memoria RAM"/>
+                <h3>Memoria RAM</h3>
+            </button>
+            <button class="item" type="button" data-categoria="placa-base">
+                <img width="100" height="100" src="https://img.icons8.com/dotty/100/motherboard.png" alt="Placa base"/>
+                <h3>Placa base</h3>
+            </button>
+            <button class="item" type="button" data-categoria="microfono">
+                <img width="100" height="100" src="https://img.icons8.com/dotty/100/microphone.png" alt="Microfonos"/>
+                <h3>Microfonos</h3>
+            </button>
+        </div>
+
+        <div class="productos">
+            <div class="producto" data-categoria="audifonos">
+                <img src="images/1.png" alt="Audífonos Bluetooth">
+                <h4>Audífonos Bluetooth</h4>
+                <p class="precio">$350</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-categoria="mouse">
+                <img src="images/2.png" alt="Mouse Gamer RGB">
+                <h4>Mouse Gamer RGB</h4>
+                <p class="precio">$220</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-categoria="teclado">
+                <img src="images/3.png" alt="Teclado Mecánico">
+                <h4>Teclado Mecánico</h4>
+                <p class="precio">$480</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-categoria="procesador">
+                <img src="images/3.png" alt="Procesador Intel i5">
+                <h4>Procesador Intel i5</h4>
+                <p class="precio">$2,500</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+                        <div class="producto" data-categoria="audifonos">
+                <img src="images/1.png" alt="Audífonos Bluetooth">
+                <h4>Audífonos Bluetooth</h4>
+                <p class="precio">$350</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-categoria="mouse">
+                <img src="images/2.png" alt="Mouse Gamer RGB">
+                <h4>Mouse Gamer RGB</h4>
+                <p class="precio">$220</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-categoria="teclado">
+                <img src="images/3.png" alt="Teclado Mecánico">
+                <h4>Teclado Mecánico</h4>
+                <p class="precio">$480</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-categoria="procesador">
+                <img src="images/3.png" alt="Procesador Intel i5">
+                <h4>Procesador Intel i5</h4>
+                <p class="precio">$2,500</p>
+                <button class="btn-carrito">Añadir al carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-box">
+            <div class="footer-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-title">
+                        LaCajitaTech
+                        <span class="accordion-arrow"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <a href="#">Quiénes somos</a>
+                        <a href="#">Experiencia Cajita</a>
+                        <a href="#">Misión y Visión</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-title">
+                        Servicios al cliente
+                        <span class="accordion-arrow"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <a href="#">Contáctenos</a>
+                        <a href="#">Soporte</a>
+                        <a href="#">Cuéntanos tu experiencia</a>
+                        <a href="#">Garantías</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-title">
+                        Servicios
+                        <span class="accordion-arrow"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <a href="#">Mantenimientos</a>
+                        <a href="#">Servicio post venta</a>
+                    </div>
+                </div>
+            </div>
             <div class="footer-card">
                 <div class="footer-social">
-                <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook-new.png" alt="Facebook"></a>
-                <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
-                <a href="#"><img src="https://img.icons8.com/ios-filled/24/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/whatsapp.png" alt="WhatsApp"></a>
                 </div>
-            <div class="footer-copy">
-                <small>&copy; 2025 LaCajitaTech. Todos los derechos reservados.</small>
+                <div class="footer-copy">
+                    <small>&copy; 2025 LaCajitaTech. Todos los derechos reservados.</small>
+                </div>
             </div>
         </div>
-    </div>
-                <!-- FOOTER INFERIOR -->
-    <div class="footer-bottom">
+        <div class="footer-bottom">
             <div class="footer-bottom-content">
                 <div class="copyright">
                     © LaCajitaTech 2023-2025
@@ -192,27 +232,43 @@
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<script>
-document.querySelectorAll('.accordion-title').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const isActive = this.classList.contains('active');
-        document.querySelectorAll('.accordion-title').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.accordion-content').forEach(c => {
-            c.style.maxHeight = '0px';
-            c.classList.remove('open');
+    <script>
+    // Acordeón del footer
+    document.querySelectorAll('.accordion-title').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const isActive = this.classList.contains('active');
+            document.querySelectorAll('.accordion-title').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.accordion-content').forEach(c => {
+                c.style.maxHeight = '0px';
+                c.classList.remove('open');
+            });
+            if (!isActive) {
+                this.classList.add('active');
+                const content = this.nextElementSibling;
+                content.classList.add('open');
+                const padding = 32;
+                content.style.maxHeight = (content.scrollHeight + padding) + "px";
+            }
         });
-        if (!isActive) {
-            this.classList.add('active');
-            const content = this.nextElementSibling;
-            content.classList.add('open');
-            // Suma el padding vertical (16px arriba + 16px abajo = 32px)
-            const padding = 32;
-            content.style.maxHeight = (content.scrollHeight + padding) + "px";
-        }
     });
-});
-</script>
+
+    // Filtro de productos por categoría
+    document.querySelectorAll('.filtro .item').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const categoria = this.getAttribute('data-categoria');
+            document.querySelectorAll('.producto').forEach(prod => {
+                if (categoria === "todos" || prod.getAttribute('data-categoria') === categoria) {
+                    prod.style.display = '';
+                } else {
+                    prod.style.display = 'none';
+                }
+            });
+            document.querySelectorAll('.filtro .item').forEach(b => b.classList.remove('activo'));
+            this.classList.add('activo');
+        });
+    });
+    </script>
+</body>
 </html>
