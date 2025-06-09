@@ -368,7 +368,7 @@ input[name="slider"] {
     .top {
         background-color: #000;
         color: #fff;
-        height: 48px;
+        height: 35px;
         width: 100vw;
         min-width: 100%;
         padding: 0 20px;
@@ -377,22 +377,37 @@ input[name="slider"] {
         align-items: center;
         font-size: 14px;
     }
+
+    .cajita {
+        fill: #fff;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .bienvenida-con-logo span {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
     .slider {
         display: flex;
         position: static;
         max-width: 1600px;
-        height: 460px; /* Fondo blanco más alto */
-        margin: 40px auto;
+        height: 350px; /* Fondo blanco más alto */
+        margin: 20px auto;
         overflow: visible;
         justify-content: center;
         align-items: center;
     }
+
     .slide {
         position: static;
         opacity: 1 !important;
         width: 33.33%;
         min-width: 0;
-        height: 460px;
+        height: 350px;
         margin: 0 1%;
         transition: none;
         display: flex;
@@ -402,6 +417,7 @@ input[name="slider"] {
         box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         border-radius: 24px;
     }
+
     .slide img {
         width: 100%;
         height: 100%;
@@ -413,35 +429,35 @@ input[name="slider"] {
         box-sizing: border-box;
         margin: 0;
     }
+
     .arrow,
     .slider-nav {
         display: none !important;
     }
+
     input[name="slider"] {
         display: none !important;
     }
 
     .filtro {
-        gap: 48px;
-        padding: 32px 0;
-        margin-left: 20px;
-        margin-right: 20px;
-        scrollbar-color: #111 #eee;
-        justify-content: flex-start; /* Mantén flex-start para scroll horizontal */
+        gap: 28px;           /* antes 48px */
+        padding: 20px 0;     /* antes 32px 0 */
     }
+
     .item {
-        min-width: 180px;
-        max-width: 220px;
-        padding: 24px 12px;
-        border-radius: 20px;
-        border: 2.5px solid #111;
+        min-width: 120px;    /* antes 180px */
+        max-width: 140px;    /* antes 220px */
+        padding: 14px 6px;   /* antes 24px 12px */
+        border-radius: 14px; /* antes 20px */
     }
+
     .item img {
-        width: 110px;
-        height: 110px;
+        width: 70px;         /* antes 110px */
+        height: 70px;        /* antes 110px */
     }
+
     .item h3 {
-        font-size: 1.1rem;
+        font-size: 0.95rem;  /* antes 1.1rem */
     }
 
     .footer-accordion {
@@ -521,5 +537,4 @@ input[name="slider"] {
         color: #ccc;
         font-size: 0.85rem;
     }
-
 }
