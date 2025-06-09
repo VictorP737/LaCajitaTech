@@ -183,7 +183,7 @@
 }
 
 .btn-vaciar:hover {
-    background: #e65c00;
+    background: #ff6600;
 }
 
 /* Badge del carrito */
@@ -434,7 +434,7 @@ input[name="slider"] {
 }
 
 .btn-carrito:hover {
-    background: #e65c00;
+    background: #ff6600;
 }
 
 /* footer */
