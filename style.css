@@ -397,6 +397,14 @@ input[name="slider"] {
     display: none;
 }
 
+.filtro [data-categoria="audifonos"] {
+    display: none;
+}
+
+.filtro [data-categoria="ram"] {
+    display: none;
+}
+
 /* Estilo de los elementos del filtro */
 .item {
     background: #fff;
@@ -720,6 +728,15 @@ input[name="slider"] {
         flex-direction: column;
         align-items: center;
         justify-content: center; /* Centra verticalmente */
+    }
+    .filtro [data-categoria="microfono"] {
+    display: none;
+    }
+    .filtro [data-categoria="audifonos"] {
+        display: none;
+    }
+    .filtro [data-categoria="ram"] {
+        display: none;
     }
     .item img {
         width: 100px;

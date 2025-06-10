@@ -27,7 +27,9 @@ document.querySelectorAll('.btn-carrito').forEach((btn) => {
     btn.addEventListener('click', function() {
         const prod = this.closest('.producto');
         const nombre = prod.querySelector('h4').textContent;
-        const precio = parseFloat(prod.querySelector('.precio').textContent.replace('$','').replace(',',''));
+        // Obtener el precio del atributo data-precio del botón "COMPRAR AHORA"
+        const btnComprar = prod.querySelector('.btn-comprar-ahora');
+        const precio = parseInt(btnComprar.getAttribute('data-precio'));
         const img = prod.querySelector('img').src;
         const existe = carrito.find(p => p.nombre === nombre);
         if (existe) {
@@ -65,7 +67,7 @@ function renderCarrito() {
             <button class="menos" data-i="${i}" style="margin:0 4px;">−</button>
             <span style="min-width:28px;text-align:center;">${prod.cantidad}</span>
             <button class="mas" data-i="${i}" style="margin:0 4px;">+</button>
-            <span style="margin-left:8px;">$${(prod.precio * prod.cantidad).toLocaleString()}</span>
+            <span style="margin-left:8px;">$${(prod.precio * prod.cantidad).toLocaleString('es-CO')}</span>
             <button class="eliminar" data-i="${i}" style="margin-left:8px;">Eliminar</button>
         `;
         items.appendChild(div);
@@ -103,7 +105,7 @@ function renderCarrito() {
     });
     // Total
     const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-    document.getElementById('carrito-total').textContent = 'Total: $' + total.toLocaleString();
+    document.getElementById('carrito-total').textContent = 'Total: $' + total.toLocaleString('es-CO');
 }
 
 // Badge del carrito SIEMPRE visible con número
@@ -133,11 +135,11 @@ document.getElementById('comprar-whatsapp').addEventListener('click', function()
     let total = 0;
 
     productos.forEach((producto, index) => {
-        mensaje += `${index + 1}. ${producto.nombre} - $${producto.precio}%0A`;
+        mensaje += `${index + 1}. ${producto.nombre} - $${producto.precio.toLocaleString('es-CO')} x${producto.cantidad}%0A`;
         total += producto.precio * producto.cantidad;
     });
 
-    mensaje += `%0ATotal: $${total.toFixed(2)}%0A%0AMi información:%0ANombre: [COMPLETAR]%0ADirección: [COMPLETAR]%0ATeléfono: [COMPLETAR]`;
+    mensaje += `%0ATotal: $${total.toLocaleString('es-CO')}%0A%0AMi información:%0ANombre: [COMPLETAR]%0ADirección: [COMPLETAR]%0ATeléfono: [COMPLETAR]`;
 
     const telefono = '573113903985';
     window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
