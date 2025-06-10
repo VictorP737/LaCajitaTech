@@ -37,6 +37,20 @@
     justify-content: center;
 }
 
+.top-redes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+}
+.top-redes a img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s;
+}
+.top-redes a:hover img {
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(-20deg) saturate(5);
+}
+
 /* Header principal alineado horizontalmente */
 .header {
     display: flex;
@@ -472,39 +486,40 @@ input[name="slider"] {
     color: #fff;
     border: none;
     border-radius: 8px;
-    padding: 8px 18px;
+    padding: 6px 18px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 
 .btn-carrito:hover {
     background: #ff8800;
-    scale: 1.1;
+    transform: scale(1.1);
 }
 
 .btn-comprar-ahora {
     background: #ff6600;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 6px 10px;      /* Menos padding */
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.95rem;     /* Fuente más pequeña */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
     margin-top: 10px;
-    width: 100%;
-    transition: background 0.3s;
+    width: 70%;             /* Más angosto */
+    max-width: 250px;       /* Máximo ancho */
+    transition: background 0.3s, transform 0.2s;
 }
 
 .btn-comprar-ahora:hover {
     background: #ff8800;
-    scale: 1.1;
+    transform: scale(1.05);
 }
 
 

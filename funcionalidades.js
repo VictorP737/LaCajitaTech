@@ -40,7 +40,8 @@ document.querySelectorAll('.btn-comprar-ahora').forEach(btn => {
         const producto = this.getAttribute('data-producto');
         const precio = this.getAttribute('data-precio');
         const mensaje = `¡Hola LaCajitaTech! Quiero comprar: ${producto} - $${precio}`;
-        const numero = '573112168639'; // Cambiar si es necesario
+        const numero = '573113903985'; // Cambiar si es necesario
         window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
     });
 });
+
