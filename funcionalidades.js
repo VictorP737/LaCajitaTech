@@ -45,3 +45,27 @@ document.querySelectorAll('.btn-comprar-ahora').forEach(btn => {
     });
 });
 
+// Mostrar/ocultar flecha "volver arriba" solo en móvil
+function esMovil() {
+    return window.innerWidth <= 768;
+}
+
+function actualizarFlechaArriba() {
+    const btn = document.getElementById('btn-arriba');
+    if (!btn) return;
+    if (esMovil() && window.scrollY > 200) {
+        btn.style.display = 'block';
+    } else {
+        btn.style.display = 'none';
+    }
+}
+
+window.addEventListener('scroll', actualizarFlechaArriba);
+window.addEventListener('resize', actualizarFlechaArriba);
+
+const btnArriba = document.getElementById('btn-arriba');
+if (btnArriba) {
+    btnArriba.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
