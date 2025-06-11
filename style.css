@@ -43,10 +43,12 @@
     gap: 12px;
     height: 100%;
 }
+
 .top-redes a img {
     filter: brightness(0) invert(1);
     transition: filter 0.2s;
 }
+
 .top-redes a:hover img {
     filter: brightness(0) invert(0.7) sepia(1) hue-rotate(-20deg) saturate(5);
 }
@@ -89,6 +91,7 @@
     align-items: center;
     justify-content: flex-start;
     min-width: 50px;
+    position: relative;
 }
 
 .carrito:hover {
@@ -109,7 +112,6 @@
     margin-right: 0;
     display: block;
 }
-
 
 /* Carrito Modal */
 #modal-carrito {
@@ -258,15 +260,6 @@
     padding: 2px 6px;
 }
 
-/* Icono del carrito */
-.carrito {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-width: 50px;
-}
-
 /* --- SLIDER PARA MÓVIL --- */
 .slider {
     position: relative;
@@ -380,41 +373,41 @@ input[name="slider"] {
     scrollbar-color: #111 #000000;
     justify-content: flex-start;
     align-items: center;
-    scroll-behavior: smooth;   /* <-- Alto máximo igual */
+    scroll-behavior: smooth;
+    position: relative;
 }
 
 .filtro .item {
     width: 170px;
     min-width: 170px;
     max-width: 170px;
-    height: 170px;         /* <-- Alto fijo */
-    min-height: 170px;     /* <-- Alto mínimo igual */
-    max-height: 170px;     /* <-- Alto máximo igual *//* Centra verticalmente */
+    height: 170px;
+    min-height: 170px;
+    max-height: 170px;
 }
 
 .filtro::-webkit-scrollbar {
-    height: 8px;
-    background: #000000;
+    height: 12px;
+    background: #222;
 }
 
 .filtro::-webkit-scrollbar-thumb {
-    background: #111;
-    border-radius: 4px;
+    background: #ff6600;
+    border-radius: 6px;
+}
+
+.filtro {
+    scrollbar-color: #ff6600 #222;
+    scrollbar-width: thick;
+    position: relative;
 }
 
 /* Ocultar categorías específicas */
-.filtro [data-categoria="microfono"] {
-    display: none;
-}
-
-.filtro [data-categoria="audifonos"] {
-    display: none;
-}
-
+.filtro [data-categoria="microfono"],
+.filtro [data-categoria="audifonos"],
 .filtro [data-categoria="ram"] {
     display: none;
 }
-
 
 /* Estilo de los elementos del filtro */
 .item {
@@ -451,6 +444,38 @@ input[name="slider"] {
     border-color: #ff6600;
     box-shadow: 0 4px 16px rgba(255,102,0,0.10);
     background: #fff7f0;
+}
+
+/* Flechas del filtro */
+.filtro-nav-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 102, 0, 0.75);
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: background 0.2s, color 0.2s;
+    user-select: none;
+    border: none;
+}
+
+.filtro-arrow-left {
+    left: 16px;
+    background: rgba(255, 102, 0, 0.45) !important;
+}
+
+.filtro-arrow-right {
+    right: 16px;
+    background: rgba(255, 102, 0, 0.65) !important;
 }
 
 /* productos */
@@ -516,7 +541,6 @@ input[name="slider"] {
     transition: background 0.3s, transform 0.2s;
 }
 
-
 .btn-carrito:hover {
     background: #ff8800;
     transform: scale(1.1);
@@ -526,17 +550,17 @@ input[name="slider"] {
     background: #ff6600;
     color: white;
     border: none;
-    padding: 6px 10px;      /* Menos padding */
+    padding: 6px 10px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.95rem;     /* Fuente más pequeña */
+    font-size: 0.95rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    width: 70%;             /* Más angosto */
-    max-width: 250px;       /* Máximo ancho */
+    width: 70%;
+    max-width: 250px;
     transition: background 0.3s, transform 0.2s;
 }
 
@@ -544,7 +568,6 @@ input[name="slider"] {
     background: #ff8800;
     transform: scale(1.05);
 }
-
 
 /* footer */
 .footer-accordion {
@@ -676,7 +699,7 @@ input[name="slider"] {
     bottom: 80px;
     right: 20px;
     z-index: 9999;
-    background: #ff6600;   /* Fondo naranja */
+    background: #ff6600;
     border: none;
     border-radius: 50%;
     width: 48px;
@@ -758,23 +781,22 @@ input[name="slider"] {
         width: 180px;
         min-width: 180px;
         max-width: 180px;
-        height: 180px;         /* <-- Alto fijo */
-        min-height: 180px;     /* <-- Alto mínimo igual */
-        max-height: 180px;     /* <-- Alto máximo igual */
+        height: 180px;
+        min-height: 180px;
+        max-height: 180px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* Centra verticalmente */
+        justify-content: center;
     }
-    .filtro [data-categoria="microfono"] {
-    display: none;
-    }
-    .filtro [data-categoria="audifonos"] {
-        display: none;
-    }
+    .filtro [data-categoria="microfono"],
+    .filtro [data-categoria="audifonos"],
     .filtro [data-categoria="ram"] {
         display: none;
+    }
+    .filtro-nav-arrow {
+        display: none !important;
     }
     .item img {
         width: 100px;
@@ -790,7 +812,6 @@ input[name="slider"] {
         padding: 32px 20px;
         background: #fafafa;
     }
-
     .producto img {
         width: 80%;
         height: auto;
@@ -887,5 +908,3 @@ input[name="slider"] {
         padding: 20px 8px !important;
     }
 }
-
-
