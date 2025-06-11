@@ -69,3 +69,26 @@ if (btnArriba) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+document.querySelectorAll('.img-cambio').forEach(img => {
+    const imagenes = img.getAttribute('data-imagenes').split(',');
+    let idx = 0;
+    let intervalo;
+
+    function cambiarImagen() {
+        idx = (idx + 1) % imagenes.length;
+        img.src = imagenes[idx];
+    }
+
+    // Cambio automático cada 6 segundos (6000 milisegundos)
+    intervalo = setInterval(cambiarImagen, 6000);
+
+    // Cambio por click
+    img.addEventListener('click', cambiarImagen);
+
+    // Opcional: pausa el cambio automático si el mouse está encima
+    img.addEventListener('mouseenter', () => clearInterval(intervalo));
+    img.addEventListener('mouseleave', () => {
+        intervalo = setInterval(cambiarImagen, 6000);
+    });
+});
