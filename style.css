@@ -825,3 +825,21 @@ input[name="slider"] {
         font-size: 0.85rem;
     }
 }
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    .productos {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 24px !important;
+        padding: 28px 12px !important;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 899px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        padding: 20px 8px !important;
+    }
+}
+
+
