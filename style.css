@@ -826,6 +826,19 @@ input[name="slider"] {
     .filtro-nav-arrow {
         display: none !important;
     }
+    .filtro::-webkit-scrollbar {
+        height: 12px;
+        background: #222;
+    }
+    .filtro::-webkit-scrollbar-thumb {
+        background: #ff6600;
+        border-radius: 6px;
+    }
+    .filtro {
+        scrollbar-color: #000000b6 #ffffff !important;
+        scrollbar-width: thick;         
+        position: relative;
+    }
     .item img {
         width: 100px;
         height: 100px;
