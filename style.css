@@ -835,7 +835,7 @@ input[name="slider"] {
         border-radius: 6px;
     }
     .filtro {
-        scrollbar-color: #000000b6 #ffffff !important;
+        scrollbar-color: #ff6600 #ffffff !important;
         scrollbar-width: thick;         
         position: relative;
     }
