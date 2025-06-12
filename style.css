@@ -720,6 +720,34 @@ input[name="slider"] {
     height: 100%;
 }
 
+#notificacion-carrito {
+    display: none;
+    position: fixed;
+    bottom: 12px;
+    left: 8px;
+    right: 8px;
+    background: rgba(255, 102, 0, 0.80); /* Color con transparencia */
+    color: #fff;
+    padding: 10px 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    z-index: 9999;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    max-width: calc(100vw - 16px);
+}
+
+/* Mostrar notificación con la clase visible */
+#notificacion-carrito.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* --- RESPONSIVE PARA PC --- */
 @media (min-width: 601px) {
     .modal-carrito-contenido {
@@ -890,6 +918,14 @@ input[name="slider"] {
     }
     #btn-arriba {
         display: none !important;
+    }
+    #notificacion-carrito {
+        left: auto;
+        right: 20px;
+        bottom: 20px;
+        max-width: 350px;
+        padding: 12px 16px;
+        font-size: 1.08rem;
     }
 }
 

@@ -27,7 +27,6 @@ document.querySelectorAll('.btn-carrito').forEach((btn) => {
     btn.addEventListener('click', function() {
         const prod = this.closest('.producto');
         const nombre = prod.querySelector('h4').textContent;
-        // Obtener el precio del atributo data-precio del botón "COMPRAR AHORA"
         const btnComprar = prod.querySelector('.btn-comprar-ahora');
         const precio = parseInt(btnComprar.getAttribute('data-precio'));
         const img = prod.querySelector('img').src;
@@ -40,13 +39,13 @@ document.querySelectorAll('.btn-carrito').forEach((btn) => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
         renderCarrito();
         actualizarIconoCarrito();
-        // Mostrar notificación
-        const noti = document.getElementById('notificacion-carrito');
-        noti.style.display = 'block';
-        setTimeout(() => {
-            noti.style.display = 'none';
-        }, 2100);
 
+        // Mostrar notificación aquí:
+        const noti = document.getElementById('notificacion-carrito');
+        noti.classList.add('visible');
+        setTimeout(() => {
+            noti.classList.remove('visible');
+        }, 2100);
     });
 });
 
@@ -144,3 +143,4 @@ document.getElementById('comprar-whatsapp').addEventListener('click', function()
     const telefono = '573113903985';
     window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
 });
+

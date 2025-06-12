@@ -1,0 +1,143 @@
+/* --- Mobile First --- */
+body {
+    background: #fafafa;
+    margin: 0;
+    font-family: 'Signika', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Sección principal de misión y visión */
+.mision-vision-section {
+    max-width: 98vw;
+    margin: 15px auto 0 auto; /* Más separación arriba */
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 18px 6px 18px 6px;
+}
+
+.mision-vision-section h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #ff6600;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    margin: auto 50px 20px 50px;
+    padding:7px;
+}
+
+.mision-vision-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mision-vision-content > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mision-vision-content h3 {
+    color: #ff6600;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.mision-vision-content p {
+    font-size: 16px;
+    color: #444;
+    text-align: center;
+    max-width: 98vw;
+}
+
+/* Sección de clientes felices */
+.clientes-felices-section {
+    max-width: 99vw;
+    margin: 32px auto 0 auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 18px 6px;
+    margin-bottom: 15px;
+}
+
+.clientes-felices-section h2 {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #ff6600;
+    margin-bottom: 18px;
+}
+
+.clientes-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.cliente-foto {
+    width: 95vw;
+    max-width: 220px;
+    text-align: center;
+}
+
+.cliente-foto img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.cliente-foto p {
+    margin-top: 7px;
+    color: #222;
+    font-size: 0.97rem;
+}
+
+/* --- Desktop (PC) --- */
+@media (min-width: 601px) {
+    .mision-vision-section {
+        max-width: 1200px;    /* Más ancho en PC */
+        padding: 40px 48px 32px 48px;
+        border-radius: 22px;
+        margin-top: 64px;     /* Más separación arriba en PC */
+    }
+    .mision-vision-section h2 {
+        font-size: 2rem;
+        margin-bottom: 28px;
+    }
+    .mision-vision-content {
+        gap: 32px;
+    }
+    .mision-vision-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .mision-vision-content p {
+        font-size: 1.1rem;
+        max-width: 700px;
+    }
+
+    .clientes-felices-section {
+        max-width: 1100px;
+        padding: 32px 24px;
+        border-radius: 18px;
+    }
+    .clientes-felices-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+    }
+    .clientes-galeria {
+        gap: 24px;
+    }
+    .cliente-foto {
+        width: 180px;
+        max-width: none;
+    }
+    .cliente-foto img {
+        border-radius: 14px;
+    }
+    .cliente-foto p {
+        font-size: 0.98rem;
+    }
+}
