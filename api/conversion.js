@@ -1,4 +1,6 @@
-// api/conversion.js
+// /api/conversion.js
+import crypto from 'crypto';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).end('Method not allowed');
@@ -6,7 +8,7 @@ export default async function handler(req, res) {
 
   const { event, email, phone, value } = req.body;
 
-  const response = await fetch('https://graph.facebook.com/v18.0/YOUR_PIXEL_ID/events', {
+  const response = await fetch(`https://graph.facebook.com/v18.0/${process.env.PIXEL_ID}/events`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -20,18 +22,17 @@ export default async function handler(req, res) {
         custom_data: {
           value: value,
           currency: 'COP'
-        }
+        },
+        action_source: 'website'
       }],
-      access_token: 'YOUR_ACCESS_TOKEN'
+      access_token: process.env.ACCESS_TOKEN
     })
   });
 
-  const result = await response.json();
-  return res.status(200).json(result);
+  const data = await response.json();
+  return res.status(200).json(data);
 }
 
-// Hashing required by Meta (SHA256)
-import crypto from 'crypto';
 function hash(data) {
   return crypto.createHash('sha256').update(data.trim().toLowerCase()).digest('hex');
 }
