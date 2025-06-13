@@ -40,3 +40,5 @@ export default async function handler(req, res) {
 function hash(data) {
   return createHash('sha256').update(data.trim().toLowerCase()).digest('hex');
 }
+
+console.log(process.env.PIXEL_ID)
