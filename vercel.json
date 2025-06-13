@@ -1,4 +1,20 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json"
+},
+  "name": "conversion-api",
+  "routes": [
+    {
+      "src": "/api/conversion",
+      "dest": "/api/conversion.js"
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/conversion.js",
+      "use": "@vercel/node"
+    }
+  ],
+{
   "version": 1,
   "functions": {
     "api/conversion.js": {
