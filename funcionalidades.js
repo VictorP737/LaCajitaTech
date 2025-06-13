@@ -23,19 +23,38 @@ document.querySelectorAll('.accordion-title').forEach(btn => {
 // Filtro de productos por categoría
 // ==========================
 document.querySelectorAll('.filtro .item').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const categoria = this.getAttribute('data-categoria');
-        document.querySelectorAll('.producto').forEach(prod => {
-            if (categoria === "todos" || prod.getAttribute('data-categoria') === categoria) {
-                prod.style.display = '';
-            } else {
-                prod.style.display = 'none';
-            }
-        });
-        document.querySelectorAll('.filtro .item').forEach(b => b.classList.remove('activo'));
-        this.classList.add('activo');
+  btn.addEventListener('click', function () {
+    const categoria = this.getAttribute('data-categoria');
+
+    // Mostrar/ocultar productos por categoría
+    document.querySelectorAll('.producto').forEach(prod => {
+      if (categoria === "todos" || prod.getAttribute('data-categoria') === categoria) {
+        prod.style.display = '';
+      } else {
+        prod.style.display = 'none';
+      }
     });
+
+    // Actualizar estilos activos
+    document.querySelectorAll('.filtro .item').forEach(b => b.classList.remove('activo'));
+    this.classList.add('activo');
+
+    // Enviar evento "Search" a Meta con la categoría seleccionada
+    fetch('/api/conversion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'Search',
+        content_ids: [`categoria_${categoria}`],
+        content_type: 'category'
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log('🔍 Search enviado a Meta:', data))
+    .catch(err => console.error('❌ Error al enviar Search:', err));
+  });
 });
+
 
 // ==========================
 // Botón COMPRAR AHORA (WhatsApp)
@@ -138,4 +157,36 @@ document.addEventListener('DOMContentLoaded', function () {
             filtro.scrollBy({ left: 200, behavior: 'smooth' });
         });
     }
+});
+
+// ==========================
+// Mostrar/ocultar modal de carrito api facebook
+// ==========================
+
+document.querySelectorAll('.producto').forEach(prod => {
+  prod.addEventListener('click', function (e) {
+    // Evita que se dispare si se hizo clic en los botones internos
+    if (e.target.closest('.btn-carrito') || e.target.closest('.btn-comprar-ahora')) return;
+
+    const nombre = this.querySelector('h4')?.textContent?.trim();
+    const precioTexto = this.querySelector('.precio')?.textContent?.replace(/\$|\.|,/g, '');
+    const precio = parseInt(precioTexto) || 0;
+
+    if (!nombre || !precio) return;
+
+    fetch('/api/conversion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'ViewContent',
+        content_ids: [nombre],
+        content_type: 'product',
+        value: precio,
+        currency: 'COP'
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log(`👁️ ViewContent enviado: ${nombre}`, data))
+    .catch(err => console.error('❌ Error al enviar ViewContent:', err));
+  });
 });
