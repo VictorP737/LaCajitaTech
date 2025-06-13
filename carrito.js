@@ -24,30 +24,51 @@ document.getElementById('vaciar-carrito').onclick = () => {
 
 // Agregar producto al carrito
 document.querySelectorAll('.btn-carrito').forEach((btn) => {
-    btn.addEventListener('click', function() {
-        const prod = this.closest('.producto');
-        const nombre = prod.querySelector('h4').textContent;
-        const btnComprar = prod.querySelector('.btn-comprar-ahora');
-        const precio = parseInt(btnComprar.getAttribute('data-precio'));
-        const img = prod.querySelector('img').src;
-        const existe = carrito.find(p => p.nombre === nombre);
-        if (existe) {
-            existe.cantidad += 1;
-        } else {
-            carrito.push({ nombre, precio, cantidad: 1, img });
-        }
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        renderCarrito();
-        actualizarIconoCarrito();
+  btn.addEventListener('click', function () {
+    const prod = this.closest('.producto');
+    const nombre = prod.querySelector('h4').textContent;
+    const btnComprar = prod.querySelector('.btn-comprar-ahora');
+    const precio = parseInt(btnComprar.getAttribute('data-precio'));
+    const img = prod.querySelector('img').src;
 
-        // Mostrar notificación aquí:
-        const noti = document.getElementById('notificacion-carrito');
-        noti.classList.add('visible');
-        setTimeout(() => {
-            noti.classList.remove('visible');
-        }, 2100);
-    });
+    const existe = carrito.find(p => p.nombre === nombre);
+    if (existe) {
+      existe.cantidad += 1;
+    } else {
+      carrito.push({ nombre, precio, cantidad: 1, img });
+    }
+
+    // Guardar carrito y actualizar UI
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    renderCarrito();
+    actualizarIconoCarrito();
+
+    // Enviar evento AddToCart a Meta
+    fetch('/api/conversion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'AddToCart',
+        email: 'cliente@correo.com',
+        phone: '3113903985',
+        value: precio,
+        content_ids: [nombre],
+        content_type: 'product'
+      })
+    })
+      .then(res => res.json())
+      .then(data => console.log('🛒 Evento AddToCart enviado a Meta:', data))
+      .catch(err => console.error('❌ Error al enviar AddToCart:', err));
+
+    // Mostrar notificación
+    const noti = document.getElementById('notificacion-carrito');
+    noti.classList.add('visible');
+    setTimeout(() => {
+      noti.classList.remove('visible');
+    }, 2100);
+  });
 });
+
 
 // Renderizar el carrito con botones + y -
 function renderCarrito() {

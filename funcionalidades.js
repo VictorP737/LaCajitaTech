@@ -47,25 +47,28 @@ document.querySelectorAll('.btn-comprar-ahora').forEach(btn => {
     const mensaje = `¡Hola LaCajitaTech! Quiero comprar: ${producto} - $${precio}`;
     const numero = '573113903985';
 
-    // WhatsApp
+    // 1. Abrir WhatsApp
     window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
 
-    // Meta Conversion API
+    // 2. Enviar evento Purchase a Meta
     fetch('/api/conversion', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         event: 'Purchase',
         email: 'cliente@correo.com',
         phone: '3113903985',
-        value: parseInt(precio)
+        value: parseInt(precio),
+        content_ids: [producto],
+        content_type: 'product'
       })
     })
     .then(res => res.json())
-    .then(data => console.log('🎯 Conversión enviada a Meta:', data))
-    .catch(err => console.error('❌ Error al enviar conversión:', err));
+    .then(data => console.log('🎯 Evento enviado a Meta:', data))
+    .catch(err => console.error('❌ Error al enviar evento:', err));
   });
-})
+});
+
 
 // ==========================
 // Mostrar/ocultar flecha "volver arriba" solo en móvil
