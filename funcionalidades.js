@@ -41,14 +41,31 @@ document.querySelectorAll('.filtro .item').forEach(btn => {
 // Botón COMPRAR AHORA (WhatsApp)
 // ==========================
 document.querySelectorAll('.btn-comprar-ahora').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const producto = this.getAttribute('data-producto');
-        const precio = this.getAttribute('data-precio');
-        const mensaje = `¡Hola LaCajitaTech! Quiero comprar: ${producto} - $${precio}`;
-        const numero = '573113903985'; // Cambiar si es necesario
-        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
-    });
-});
+  btn.addEventListener('click', function () {
+    const producto = this.getAttribute('data-producto');
+    const precio = this.getAttribute('data-precio');
+    const mensaje = `¡Hola LaCajitaTech! Quiero comprar: ${producto} - $${precio}`;
+    const numero = '573113903985';
+
+    // WhatsApp
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+
+    // Meta Conversion API
+    fetch('/api/conversion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        event: 'Purchase',
+        email: 'cliente@correo.com',
+        phone: '3113903985',
+        value: parseInt(precio)
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log('🎯 Conversión enviada a Meta:', data))
+    .catch(err => console.error('❌ Error al enviar conversión:', err));
+  });
+})
 
 // ==========================
 // Mostrar/ocultar flecha "volver arriba" solo en móvil
@@ -119,21 +136,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-document.getElementById('btn-comprar').addEventListener('click', function () {
-  fetch('/api/conversion', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      event: 'Purchase',
-      email: 'cliente@correo.com',
-      phone: '3113903985',
-      value: 259000
-    })
-  })
-  .then(res => res.json())
-  .then(data => console.log('Conversión enviada:', data))
-  .catch(err => console.error('Error al enviar conversión:', err));
-});
-// ==========================
-// Enviar evento de conversión al cargar la página
