@@ -119,3 +119,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+document.getElementById('btn-comprar').addEventListener('click', function () {
+  fetch('/api/conversion', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      event: 'Purchase',
+      email: 'cliente@correo.com',
+      phone: '3113903985',
+      value: 259000
+    })
+  })
+  .then(res => res.json())
+  .then(data => console.log('Conversión enviada:', data))
+  .catch(err => console.error('Error al enviar conversión:', err));
+});
+// ==========================
+// Enviar evento de conversión al cargar la página

@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     return res.status(405).send('Method not allowed');
   }
 
-  const { event, email, phone, value } = await req.json?.() || req.body;
+  const { event, email, phone, value } = req.body;
 
   const pixelId = process.env.PIXEL_ID;
   const accessToken = process.env.ACCESS_TOKEN;
@@ -20,8 +20,8 @@ export default async function handler(req, res) {
         event_name: event,
         event_time: Math.floor(Date.now() / 1000),
         user_data: {
-          em: [hash(email)],
-          ph: [hash(phone)]
+          em: [hash(email)],            // Nombre exacto requerido por Meta
+          ph: [hash(phone)]             // Nombre exacto requerido por Meta
         },
         custom_data: {
           value: value,

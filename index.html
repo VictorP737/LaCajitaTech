@@ -713,32 +713,6 @@
         ]
     }
     </script>
-    <script>
-    function enviarConversion(nombreProducto, precio, email, telefono) {
-    fetch('/api/conversion', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            event: 'Purchase',
-            email: email,
-            phone: telefono,
-            value: precio
-        })
-    })
-    .then(res => res.json())
-    .then(data => console.log('Conversion API:', data))
-    .catch(err => console.error('Error API Meta:', err));
-    }
-
-    // Llamar esto cuando alguien haga clic en "COMPRAR AHORA"
-    document.querySelectorAll('.btn-comprar-ahora').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const producto = btn.getAttribute('data-producto');
-        const precio = parseInt(btn.getAttribute('data-precio'));
-        enviarConversion(producto, precio, 'cliente@ejemplo.com', '3113903985');
-        });
-    });
-    </script>
 </body>
 <div id="notificacion-carrito">
     Producto agregado al carrito
