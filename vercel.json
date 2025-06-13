@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/conversion.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs@18.x"
     }
   }
 }
