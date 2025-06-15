@@ -957,3 +957,9 @@ input[name="slider"] {
         padding: 20px 8px !important;
     }
 }
+
+/* Limitar altura del modal del carrito y permitir scroll interno */
+.modal-carrito-contenido {
+    max-height: 75vh;
+    overflow-y: auto;
+}
