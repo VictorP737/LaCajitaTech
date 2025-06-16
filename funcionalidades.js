@@ -190,3 +190,40 @@ document.querySelectorAll('.producto').forEach(prod => {
     .catch(err => console.error('❌ Error al enviar ViewContent:', err));
   });
 });
+
+// ==========================
+// Modal de descarga de garantía
+document.getElementById('descargar-garantia').addEventListener('click', function(e) {
+  e.preventDefault(); // Evita la descarga inmediata
+  document.getElementById('modal-descarga').classList.add('activo');
+});
+
+document.getElementById('aceptar-descarga').addEventListener('click', function() {
+  document.getElementById('modal-descarga').classList.remove('activo');
+  // Crear un enlace temporal para descargar el PDF
+  var enlace = document.createElement('a');
+  enlace.href = 'Garantia Cajita.pdf'; // Cambia por la ruta real de tu PDF
+  enlace.download = 'Garantia Cajita.pdf';
+  document.body.appendChild(enlace);
+  enlace.click();
+  document.body.removeChild(enlace);
+});
+
+document.getElementById('descargar-garantia').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('modal-descarga').classList.add('activo');
+});
+
+document.getElementById('aceptar-descarga').addEventListener('click', function() {
+  document.getElementById('modal-descarga').classList.remove('activo');
+  var enlace = document.createElement('a');
+  enlace.href = 'Garantia Cajita.pdf'; // Cambia por la ruta real de tu PDF
+  enlace.download = 'Garantia Cajita.pdf';
+  document.body.appendChild(enlace);
+  enlace.click();
+  document.body.removeChild(enlace);
+});
+
+document.getElementById('cerrar-modal').addEventListener('click', function() {
+  document.getElementById('modal-descarga').classList.remove('activo');
+});
